@@ -20,6 +20,16 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
 });
 
+window.onresize = () => {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
 function init() {
     //Set up renderer
     renderer.setPixelRatio(window.devicePixelRatio);
