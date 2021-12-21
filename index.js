@@ -11,6 +11,11 @@ var cube;
 
 const canvas = document.querySelector("#bg");
 
+canvas.style.position = "fixed";
+canvas.style.zIndex = "-1";
+canvas.style.top = 0;
+canvas.style.left = 0;
+
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
 });
