@@ -1,9 +1,16 @@
 * {
-    background-color: #181818;
+    background-color: #00000000;
     font-family: 'Roboto', sans-serif;
     color: white;
     overflow: hidden;
-    margin: 0;
+    margin: 0;  
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 #listElement {
@@ -16,6 +23,19 @@ p {
     padding-top: 25px;
     padding-left: 25px;
     margin: 0px;
+}
+
+#copyright {
+    padding-bottom: 25px;
+    padding-left: 25px;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+}
+
+#copyright:hover {
+    background: #00000000;
+    border-radius: 0px;
 }
 
 a, svg{
