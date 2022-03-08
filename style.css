@@ -13,6 +13,13 @@ canvas {
     z-index: -1;
 }
 
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 #listElement {
     padding-left: 25px;
     height: 50px;
