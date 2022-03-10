@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 function init() {
-    //chance = Math.floor(Math.random() * 50);
+    chance = Math.floor(Math.random() * 50);
 
     //Set up renderer
     renderer.setPixelRatio(window.devicePixelRatio);
