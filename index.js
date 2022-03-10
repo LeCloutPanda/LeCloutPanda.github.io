@@ -17,7 +17,7 @@ var saucer;
 var cow;
 var sus;
 
-var chance = 1;
+var chance = 2;
 
 canvas.style.position = "fixed";
 canvas.style.top = 0;
@@ -29,7 +29,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 function init() {
-    chance = Math.floor(Math.random() * 50);
+    //chance = Math.floor(Math.random() * 50);
 
     //Set up renderer
     renderer.setPixelRatio(window.devicePixelRatio);

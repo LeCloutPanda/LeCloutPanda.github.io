@@ -13,13 +13,6 @@ canvas {
     z-index: -1;
 }
 
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
 #listElement {
     padding-left: 25px;
     height: 50px;
@@ -33,16 +26,19 @@ p {
 }
 
 #copyright {
-    padding-bottom: 25px;
-    padding-left: 25px;
     display: inline-block;
     position: absolute;
+    padding-left: 0;
     bottom: 0;
 }
 
-#copyright:hover {
+#label, #copyrightItems, #copyrightItems:hover {
+    font-size: 120%;
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+
     background: #00000000;
-    border-radius: 0px;
 }
 
 a, svg{
