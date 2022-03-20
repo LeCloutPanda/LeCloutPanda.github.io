@@ -13,11 +13,6 @@ const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerH
 //const loader = new FBXLoader();
 const loader = new GLTFLoader();
 
-canvas.style.position = "fixed";
-canvas.style.top = 0;
-canvas.style.left = 0;
-canvas.style.zIndex = "-1";
-
 var spin;
 var main;
 
@@ -77,11 +72,11 @@ function setup() {
 function animate() {
     requestAnimationFrame(animate);
 
-    h.rotate(spin, 0.1, 0.1, 0);
-    h.rotate(main, 0.25);
+    h.rotate(main, 0.2, -0.5, -0.5);
+    h.rotate(spin, 0.1);
+    
     renderer.render(scene, camera);
 }
-
 
 setup();
 animate();

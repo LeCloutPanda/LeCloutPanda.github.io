@@ -13,46 +13,37 @@ canvas {
     z-index: -1;
 }
 
-#listElement {
+#listElement, #listElement:before  {
     padding-left: 25px;
     height: 50px;
+    transition: 0.3s;
+}
+
+#listElement:hover {
+    padding-left: 50px;
+    transition: 0.3s;
+}
+
+#header {
+    font-size: 200%;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 0;
+    color: #ffffff;
 }
 
 p {
-    font-size: 300%;
-    padding-top: 25px;
-    padding-left: 25px;
-    margin: 0px;
-}
-
-#copyright {
-    display: inline-block;
-    position: absolute;
-    padding-left: 0;
-    bottom: 0;
-}
-
-#label, #copyrightItems, #copyrightItems:hover {
-    font-size: 120%;
-    padding-top: 0;
-    padding-left: 0;
-    padding-bottom: 0;
-
-    background: #00000000;
-}
-
-a, svg{
     font-size: 150%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
+    color: #ffffff;
+    margin: 0px;
+    padding: 10px;
     text-decoration: none;
     display: inline-block;
     vertical-align: middle;
-    fill: #ffffff
 }
 
-a:hover {
-    background: #3f3f3f;
-    border-radius: 3px;
+svg{   
+    display: inline-block;
+    vertical-align: middle;
+    fill: #ffffff
 }
