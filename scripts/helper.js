@@ -1,6 +1,8 @@
 class Helper {
     constructor(obj) {
         this.three = obj;
+        this.rotationConversion = Math.PI / 180;
+        this.standardMaterial = new this.three.MeshStandardMaterial({ color: 0xffffff });
     }
     move(object, x, y = x, z = x) {
         object.position.x = x;
@@ -9,9 +11,9 @@ class Helper {
     }
 
     rotate(object, x, y = x, z = x) {
-        object.rotation.x = object.rotation.x + (x * (Math.PI / 180));
-        object.rotation.y = object.rotation.y + (y * (Math.PI / 180));
-        object.rotation.z = object.rotation.z + (z * (Math.PI / 180));
+        object.rotation.x += x * this.rotationConversion;
+        object.rotation.y += y * this.rotationConversion;
+        object.rotation.z += z * this.rotationConversion;
     }
 
     scale(object, x, y = x, z = x) {
@@ -20,9 +22,9 @@ class Helper {
         object.scale.z = z;
     }
 
-    createPlane(color, material = null, x, z = x) {
+    createPlane(material = null, x, z = x) {
         const geometry = new this.three.PlaneGeometry( x, z );
-        const nMaterial = material != null ? material : new this.three.MeshStandardMaterial( {color: color} ); 
+        const nMaterial = material || this.standardMaterial;
         const mesh = new this.three.Mesh( geometry, nMaterial );
     
         mesh.castShadow = true;
@@ -31,25 +33,27 @@ class Helper {
         return mesh;
     }
 
-    createSkyBox(color, scale) {
+    createSkyBox(scale) {
         const geometry = new this.three.BoxGeometry(scale, scale, scale);
-        const material = new this.three.MeshStandardMaterial( {color: color } );
+        const material =this.standardMaterial;
         const mesh = new this.three.Mesh( geometry, material );
     
         return mesh;
     }
 
-    createBox(color, material = null, x, y = x, z = x) {
-        const geometry = new this.three.BoxGeometry(x, y, z);
-        const nMaterial = material != null ? material : new this.three.MeshStandardMaterial( {color: color} ); 
+    createBox(material = null, size, castShadow = true, receiveShadow = true) {
+        const geometry = new this.three.BoxGeometry(size.x, size.y, size.z);
+        const nMaterial = material || this.standardMaterial;
         const mesh = new this.three.Mesh(geometry, nMaterial);
+        mesh.castShadow = castShadow;
+        mesh.receiveShadow = receiveShadow;
     
         return mesh;
     }
 
-    createIcoSphere(radius, detail, color, material = null) {
+    createIcoSphere(radius, detail, material = null) {
         const geometry = new this.three.IcosahedronGeometry(radius, detail);
-        const nMaterial = material != null ? material : new this.three.MeshStandardMaterial( {color: color} ); 
+        const nMaterial = material || this.standardMaterial;
         const mesh = new this.three.Mesh(geometry, nMaterial);
         
         return mesh;
