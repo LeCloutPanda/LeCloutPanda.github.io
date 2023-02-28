@@ -1,6 +1,6 @@
 * {
     background-color: #00000000;
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     color: white;
     overflow: hidden;
     margin: 0;  
@@ -32,7 +32,7 @@ canvas {
     color: #ffffff;
 }
 
-p {
+#github, #curseForge, #instagram, #discord, #youtube, #modrinth, #ko-fi, #amazon-wishlist{
     font-size: 150%;
     color: #ffffff;
     margin: 0px;
@@ -47,3 +47,4 @@ svg{
     vertical-align: middle;
     fill: #ffffff
 }
+

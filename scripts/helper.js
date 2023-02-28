@@ -2,27 +2,28 @@ class Helper {
     constructor(obj) {
         this.three = obj;
     }
-
     move(object, x, y = x, z = x) {
-        object.translateX(x);
-        object.translateY(y);
-        object.translateZ(z);
+        object.position.x = x;
+        object.position.y = y;
+        object.position.z = z;
     }
 
     rotate(object, x, y = x, z = x) {
-        object.rotateX(this.three.Math.degToRad(x));
-        object.rotateY(this.three.Math.degToRad(y));
-        object.rotateZ(this.three.Math.degToRad(z));
+        object.rotation.x = object.rotation.x + (x * (Math.PI / 180));
+        object.rotation.y = object.rotation.y + (y * (Math.PI / 180));
+        object.rotation.z = object.rotation.z + (z * (Math.PI / 180));
     }
 
     scale(object, x, y = x, z = x) {
-        object.scale.set(x, y, z);
+        object.scale.x = x;
+        object.scale.y = y;
+        object.scale.z = z;
     }
 
-    createPlane(x, z = x, color) {
+    createPlane(color, material = null, x, z = x) {
         const geometry = new this.three.PlaneGeometry( x, z );
-        const material = new this.three.MeshStandardMaterial( {color: color } );
-        const mesh = new this.three.Mesh( geometry, material );
+        const nMaterial = material != null ? material : new this.three.MeshStandardMaterial( {color: color} ); 
+        const mesh = new this.three.Mesh( geometry, nMaterial );
     
         mesh.castShadow = true;
         mesh.receiveShadow = true;
@@ -38,7 +39,7 @@ class Helper {
         return mesh;
     }
 
-    createBox(color, x, y = x, z = x, material = null) {
+    createBox(color, material = null, x, y = x, z = x) {
         const geometry = new this.three.BoxGeometry(x, y, z);
         const nMaterial = material != null ? material : new this.three.MeshStandardMaterial( {color: color} ); 
         const mesh = new this.three.Mesh(geometry, nMaterial);
