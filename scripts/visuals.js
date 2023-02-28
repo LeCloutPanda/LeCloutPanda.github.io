@@ -6,30 +6,17 @@ scene.background = new THREE.Color(0x23272A);
 scene.fog = new THREE.FogExp2( 0x000, .1 );
 
 const h = new Helper(THREE);
-
 const loader = new THREE.ImageBitmapLoader();
 
 const pop = document.querySelector("#pop");
-
 const canvas = document.querySelector("#bg");
+
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, 10000);
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
+
 const controls = new OrbitControls( camera, renderer.domElement );
 
-controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
-controls.dampingFactor = 0.05;
-controls.target.set(0, 1.5, 0);
-controls.enablePan  = false;
-controls.enableZoom  = false;
-controls.screenSpacePanning = false;
-controls.maxPolarAngle = (Math.PI / 2);
-controls.autoRotate = true;
-controls.autoRotateSpeed = -1;
-
-var spin;
 var main;
-
-
 
 function setup() {
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -37,6 +24,15 @@ function setup() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.antialias = true;
+
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.target.set(0, 1.5, 0);
+    controls.enablePan  = false;
+    controls.enableZoom  = false;
+    controls.maxPolarAngle = (Math.PI / 2);
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = -1;
 
     h.move(camera, 5, 5);
 
@@ -50,13 +46,12 @@ function setup() {
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.15);
 
-    scene.add(pointLight, ambientLight);
+    const skybox = h.createSkyBox(0x2E3337, -100);
+    
+    scene.add(pointLight, ambientLight, skybox);
 
     loader.load(
-        // resource URL
         './resources/grid.png',
-    
-        // onLoad callback
         function ( imageBitmap ) {
             const texture = new THREE.CanvasTexture( imageBitmap );
             texture.wrapS = THREE.RepeatWrapping;
@@ -71,19 +66,11 @@ function setup() {
 
             scene.add(floor);
         },
-    
-        // onProgress callback currently not supported
         undefined,
-    
-        // onError callback
         function ( err ) {
             console.log( 'An error happened' );
         }
     );
-
-    const skybox = h.createSkyBox(0x2E3337, -100);
-
-    scene.add(skybox);
 
     const boxMaterial = new THREE.MeshStandardMaterial( {color: 0xffffff, wireframe: false} );
     const box = h.createBox(null, boxMaterial, 1);
@@ -96,7 +83,6 @@ function setup() {
     const box2 = h.createBox(null, box2Material, 1);
     box.add(box2);
     
-
     main = box;
 
     var clickAmount = 0;
