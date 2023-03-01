@@ -3,6 +3,7 @@
     font-family: Roboto;
     color: white;
     overflow: hidden;
+    width: fit-content;    
     margin: 0;  
 }
 

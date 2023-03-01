@@ -14,7 +14,6 @@ const canvas = document.querySelector("#bg");
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, 10000);
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
 
-const domEvents = new THREEx.DomEvents(camera, renderer.domElement); 
 
 const controls = new OrbitControls( camera, renderer.domElement );
 
@@ -72,17 +71,21 @@ function setup() {
     );
 
     const boxMaterial = new THREE.MeshStandardMaterial( {color: 0xffffff} );
-    main = h.createBox(boxMaterial, new THREE.Vector3(1,1,1));    
+    const box = h.createBox(boxMaterial, new THREE.Vector3(1,1,1));    
     const wireFrameMaterial = new THREE.MeshBasicMaterial( {wireframe: true} );
     const wireFrameBox = h.createBox(wireFrameMaterial, new THREE.Vector3(1,1,1), false, false);
-    h.move(main, 0, 2, 0);
-    scene.add(main.add(wireFrameBox));
+    h.move(box, 0, 2, 0);
+    scene.add(box.add(wireFrameBox));
     
+    main = box;
+
     var newColor = new THREE.Color(Math.random() * 0xffffff);
 
     var clickAmount = 0;
 
-    domEvents.addEventListener(main, 'click', function(event){
+    const domEvents = new THREEx.DomEvents(camera, renderer.domElement); 
+
+    domEvents.addEventListener(box, 'click', function(event){
         clickAmount += 0.2;
         if (clickAmount <= 1) {
             h.scale(main, main.scale.x + 0.1);
