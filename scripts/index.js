@@ -3,10 +3,6 @@ function openTab(url) {
     win.focus();
 }
 
-function showModsTab() {
-   
-}
-
 function hideModList() {
     document.getElementById("FullScreen").style.display = "none";
 }
