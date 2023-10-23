@@ -1,12 +1,27 @@
+/* Generic setup */
 * {
     background-color: #1c1c1c00;
     font-family: 'Roboto', sans-serif;
     color: white;
     overflow: hidden;
-    width: fit-content;    
-    margin: 0;  
+    width: auto;
+    margin: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
+/* Generic incase svgs don't have color */
+svg {
+    display: inline-block;
+    vertical-align: middle;
+    fill: #ffffff;
+}
+
+/* Background 3D stuff */
 canvas {
     position: fixed;
     top: 0;
@@ -14,38 +29,189 @@ canvas {
     z-index: -1;
 }
 
-#listElement, #listElement:before  {
-    padding-left: 25px;
-    height: 50px;
-    transition: 0.3s;
+p {
+    font-size: 120%;
+    color: #ffffff;
+    margin: 0px;
+    padding: 10px;
+    text-decoration: none;
 }
 
-#listElement:hover {
-    padding-left: 50px;
-    transition: 0.3s;
+/* Scroll bar for lists */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-#header {
+::-webkit-scrollbar-track {
+    background: #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #757575;
+}
+
+#MainPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#LinkHeader {
     font-size: 200%;
-    padding-left: 25px;
+    padding: 25px 25px 10px 25px;
+    color: #ffffff;
+}
+
+#PageHeader {
+    font-size: 200%;
+    padding-right: 25px;
     padding-top: 25px;
     padding-bottom: 0;
     color: #ffffff;
 }
 
-#github, #curseForge, #instagram, #discord, #youtube, #modrinth, #ko-fi, #amazon-wishlist{
-    font-size: 150%;
-    color: #ffffff;
-    margin: 0px;
-    padding: 10px;
-    text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
+#Links {
+    float: left;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
-svg{   
-    display: inline-block;
-    vertical-align: middle;
-    fill: #ffffff
+#Pages {
+    float: right;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#LinkElement {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#PageElement {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+#TitleBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#FullScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4f4f4f4f;
+    backdrop-filter: blur(8px);
+    display: block;
+}
+
+#FullScreen > img {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background-color: #222222;
+    box-shadow: 0 0 10px 4px #1c1c1c;
+    border-radius: 4px;
+}
+
+#ModList {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #222222;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 4px #1c1c1c;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+}
+
+#ModListTitle {
+    font-size: 200%;
+    padding: 10px;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#ModListTitle > img {
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+}
+
+
+
+#ModListTitle > img {
+    border-radius: 10px;
+}
+
+#ModEntry {
+    background-color: #292929;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#ModEntry > div > p {
+    font-size: 100%;
+    color: #ffffff;
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#ModEntry:hover {
+    background-color: #3a3a3a;
+}
+
+#ModEntry img {
+    width: 96px;
+    height: 96px;
+    padding: 0;
+    margin-right: 15px;
+}
+
+#ModEntry a {
+    color: rgb(159, 192, 255);
+}
+
+#ModEntry > div > p:nth-child(1){
+    color: #ffffff;
+    font-size: 200%;
+    margin: 0;
+}
+
+#ModEntry > div > p:nth-child(2){
+    color: #ffffff;
+    font-size: 140%;
 }
 

@@ -15,6 +15,17 @@ var spin;
 const controls = new OrbitControls( camera, renderer.domElement );
 var time = 0;
 
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+}
+
 function setup() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -29,7 +40,7 @@ function setup() {
     controls.maxPolarAngle = (Math.PI / 2);
     controls.autoRotate = true;
     controls.autoRotateSpeed = -1;
-
+    
     h.move(camera, 5, 5);
    
     const mA = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true} );
