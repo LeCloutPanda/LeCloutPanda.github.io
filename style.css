@@ -101,6 +101,27 @@ p {
     align-items: center;
 }
 
+#LinkElement {
+    font-size: 0%;
+    transition: 0.1s;
+}
+
+#LinkElement:hover {
+    font-size: 120%;
+    transition: 0.1s;
+}
+
+#PageElement {
+    font-size: 0%;
+    transition: 0.1s;
+}
+
+#PageElement:hover {
+    font-size: 120%;
+    transition: 0.1s;
+}
+
+
 #PageElement {
     padding-left: 25px;
     padding-right: 25px;
@@ -194,6 +215,8 @@ p {
 #ModEntry img {
     width: 96px;
     height: 96px;
+    min-width: 96px;
+    min-height: 96px;
     padding: 0;
     margin-right: 15px;
 }
