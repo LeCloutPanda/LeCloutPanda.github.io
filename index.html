@@ -13,14 +13,26 @@
 
         <script src='./scripts/three.js'></script>
         <script src='./scripts/threex.domevents.js'></script>
+
+        <script> 
+            function hidePreloader() {
+                document.getElementById("Preloader").style.visibility = "hidden";
+            }
+        </script>
     </head>
 
-    <body id="body" onClick="click()">    
+    <body>
+        <div id="Preloader">
+            <p>Loading...</p>
+        </div>
+    </body>
+
+    <body onload="hidePreloader();" id="body" onClick="click()">    
         <canvas id="bg"></canvas>
         <script type="module" src="./scripts/visuals.js"></script>
         <script type="text/javascript" src="./scripts/index.js"></script>
 
-        <p style="position: absolute; bottom: 16px; left: 16px;">v0.1</p>
+        <p style="position: absolute; bottom: 16px; left: 16px;">v1.1.0</p>
 
         <div id="MainPage">
             <div id="TitleBar">

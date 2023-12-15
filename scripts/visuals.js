@@ -11,6 +11,7 @@ const canvas = document.querySelector("#bg");
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, 10000);
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
 
+
 var spin;
 const controls = new OrbitControls( camera, renderer.domElement );
 var time = 0;
@@ -18,7 +19,6 @@ var time = 0;
 window.addEventListener( 'resize', onWindowResize, false );
 
 function onWindowResize(){
-
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 

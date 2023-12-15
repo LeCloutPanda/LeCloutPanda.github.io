@@ -11,8 +11,6 @@ function showModsList() {
     document.getElementById("FullScreen").style.display = "block";
 }
 
-
-
 document.addEventListener("keydown", (e) => {
     if (e.keyCode == 27) hideModList();
 });

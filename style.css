@@ -14,6 +14,25 @@
     user-select: none;
 }
 
+/* Preloader stuff */
+#Preloader {
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    width: 100%;   
+    height: 100%;   
+    z-index: 1;
+    background: #1c1c1c; 
+    align-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+#Preloader > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 /* Generic incase svgs don't have color */
 svg {
     display: inline-block;
