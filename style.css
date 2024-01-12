@@ -193,7 +193,7 @@ p {
 
 #ModListTitle {
     font-size: 200%;
-    padding: 10px;
+    padding: 16px;
     color: #ffffff;
     display: flex;
     flex-wrap: wrap;
@@ -201,13 +201,13 @@ p {
 }
 
 #ModListTitle > img {
-    width: 64px;
-    height: 64px;
+    width:  96px;
+    height: 96px;
     margin-right: 10px;
 }
 
 #ModListTitle > img {
-    border-radius: 10px;
+    border-radius: 16px;
 }
 
 #ModEntry {
