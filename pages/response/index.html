@@ -14,8 +14,9 @@
             }
 
             function selectRandomGif() {
-                //var index = Math.floor(Math.random() * gifCount) + 1;
-                //document.getElementById("gf").src = "/myresponse/gifs/nuh-uh_" + index + ".gif"
+                var index = Math.floor(Math.random() * gifCount) + 1;
+                document.getElementById("gif").src = "gifs/nuh-uh_" + index + ".gif"
+                console.log(index);
             }
         </script>
     </head>
