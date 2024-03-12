@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pandas hell hole</title>
+        <link rel="icon" href="icon.png">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <script> 
+            var gifCount = 4;
+
+            function hidePreloader() {
+                document.getElementById("Preloader").style.visibility = "hidden";
+            }
+
+            function selectRandomGif() {
+                //var index = Math.floor(Math.random() * gifCount) + 1;
+                //document.getElementById("gf").src = "/myresponse/gifs/nuh-uh_" + index + ".gif"
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="Preloader">
+            <p>Loading...</p>
+        </div>
+    </body>
+
+    <body>    
+        <div>
+            <img id="gif" src="gifs/nuh-uh_1.gif"></img>
+        </div>
+        <script>
+            selectRandomGif();
+            hidePreloader();
+        </script>
+    </body>  
+</html>
