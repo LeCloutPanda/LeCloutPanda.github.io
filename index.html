@@ -3,22 +3,12 @@
     <head>
         <title>Pandas hell hole</title>
         <link rel="icon" href="icon.png">
+        <link rel="stylesheet" href="generic.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
         <script src='./scripts/three.js'></script>
         <script src='./scripts/threex.domevents.js'></script>
-
-        <script> 
-            function hidePreloader() {
-                document.getElementById("Preloader").style.visibility = "hidden";
-            }
-        </script>
     </head>
 
     <body>
@@ -27,18 +17,18 @@
         </div>
     </body>
 
-    <body onload="hidePreloader();" id="body" onClick="click()">    
+    <body onload="document.getElementById('Preloader').style.visibility = 'hidden';" id="body" onClick="click()">    
         <canvas id="bg"></canvas>
         <script type="module" src="./scripts/visuals.js"></script>
         <script type="text/javascript" src="./scripts/index.js"></script>
 
-        <p style="position: absolute; bottom: 16px; left: 16px;">v1.1.1</p>
+        <p style="position: absolute; bottom: 16px; left: 16px;">v1.2.0</p>
 
         <div id="MainPage">
             <div id="TitleBar">
                 <p id="LinkHeader">Socials</p>
                 <p id="LinkHeader" style="font-size: 200%;">Pandas hell hole</p>
-                <p id="LinkHeader">Projects</p>
+                <p id="LinkHeader" style="visibility: hidden;">Projects</p>
             </div>
 
             <div id="Links">
@@ -78,7 +68,7 @@
                 </div>
             </div>
 
-            <div id="Pages">
+            <div id="Pages" style="visibility: hidden;">
                 <div id="PageElement" onclick='showModsList()'> 
                     <p>Mods</p>
                     <img src="resources/logos/gear.svg" height="32" width="32">
@@ -86,7 +76,7 @@
             </div>
         </div>
 
-        <div id="FullScreen">
+        <div id="FullScreen" style="visibility: hidden;">
             <img src="resources/logos/close.svg" onclick='hideModList()'>  
 
             <div id="ModList">
@@ -223,7 +213,7 @@
                 <div>
                     <div id="ModListTitle">
                         <img src="resources/logos/neosvr_logo.svg">
-                        <p>Resonite Mods</p>
+                        <p>NeosVR Mods</p>
                     </div>
                     
                     <article id="ModEntry">

@@ -1,0 +1,95 @@
+/* Generic setup */
+* {
+    background-color: #1c1c1c00;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow: hidden;
+    width: auto;
+    margin: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+/* Preloader stuff */
+#Preloader {
+    font-family: 'Roboto', sans-serif;
+    font-size: 150%;
+    position: fixed;
+    width: 100%;   
+    height: 100%;   
+    z-index: 1;
+    background: #1c1c1c; 
+}
+
+#Preloader > p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* Mod entry stuff */
+#ModListTitle {
+    font-size: 200%;
+    padding: 16px;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#ModListTitle > img {
+    width:  96px;
+    height: 96px;
+    margin-right: 10px;
+    border-radius: 16px;
+}
+
+#ModEntry {
+    background-color: #292929;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#ModEntry > div > p {
+    font-size: 100%;
+    color: #ffffff;
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+#ModEntry:hover {
+    background-color: #3a3a3a;
+}
+
+#ModEntry img {
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    min-height: 96px;
+    padding: 0;
+    margin-right: 15px;
+}
+
+#ModEntry a {
+    color: rgb(159, 192, 255);
+}
+
+#ModEntry > div > p:nth-child(1){
+    color: #ffffff;
+    font-size: 200%;
+    margin: 0;
+}
+
+#ModEntry > div > p:nth-child(2){
+    color: #ffffff;
+    font-size: 140%;
+}
