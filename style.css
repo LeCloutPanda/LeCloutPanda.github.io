@@ -47,7 +47,7 @@ p {
     height: 100%;
 }
 
-#LinkHeader {
+.linkHeader {
     font-size: 200%;
     padding: 25px 25px 10px 25px;
     color: #ffffff;
@@ -77,7 +77,17 @@ p {
     align-items: end;
 }
 
-#LinkElement {
+.pagesDropDown {
+    float: right;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.linkElement {
+    font-size: 0%;
+    transition: 0.1s;
     padding-left: 25px;
     padding-right: 25px;
     height: 50px;
@@ -85,28 +95,19 @@ p {
     align-items: center;
 }
 
-#LinkElement {
-    font-size: 0%;
-    transition: 0.1s;
-}
-
-#LinkElement:hover {
+.linkElement:hover {
     font-size: 120%;
     transition: 0.1s;
 }
 
-#PageElement {
-    font-size: 0%;
-    transition: 0.1s;
-}
-
-#PageElement:hover {
+.pageElement:hover {
     font-size: 120%;
     transition: 0.1s;
 }
 
-
-#PageElement {
+.pageElement {
+    font-size: 0%;
+    transition: 0.1s;
     padding-left: 25px;
     padding-right: 25px;
     height: 50px;

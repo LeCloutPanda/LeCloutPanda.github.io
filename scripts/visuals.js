@@ -7,14 +7,14 @@ scene.background = new THREE.Color(0x1c1c1c);
 const h = new Helper(THREE);
 
 const canvas = document.querySelector("#bg");
+const pop = document.querySelector("#Pop");
 
 const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.001, 10000);
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
 
-
 var spin;
+var size = 1;
 const controls = new OrbitControls( camera, renderer.domElement );
-var time = 0;
 
 window.addEventListener( 'resize', onWindowResize, false );
 
@@ -30,16 +30,11 @@ function setup() {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = false;
-    renderer.antialias = true;
+    renderer.antialias = false;
 
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.05;
-    controls.target.set(0, 0, 0);
-    controls.enablePan  = false;
-    controls.enableZoom  = false;
-    controls.maxPolarAngle = (Math.PI / 2);
+    controls.enabled = false;
     controls.autoRotate = true;
-    controls.autoRotateSpeed = -1;
+    controls.autoRotateSpeed = 1;
     
     h.move(camera, 5, 5);
    
@@ -48,16 +43,34 @@ function setup() {
     const randomColor = Math.random() * 0xffffff;
     const mBA = new THREE.MeshBasicMaterial({color: randomColor, wireframe: false} );
     const mBB = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true} );
-    spin = h.createIcoSphere(1, 0, mBA);
-    const bB = h.createIcoSphere(1, 0, mBB);
+
+    var rDetail = Math.floor(Math.random() * 3);
+
+    spin = h.createIcoSphere(1, rDetail, mBA);
+    const bB = h.createIcoSphere(1, rDetail, mBB);
     scene.add(a, spin.add(bB));
+
+    canvas.addEventListener('click', function(event){
+        if (size <= 1) {
+            size += 0.1;
+        }  
+        else {
+            size = 0.5; 
+            mBA.color.set(new THREE.Color(Math.random() * 0xffffff));
+            var newRDetail = Math.floor(Math.random() * 3);
+            bB.geometry = h.createIcoSphereGeometry(1, newRDetail);
+            spin.geometry = h.createIcoSphereGeometry(1, newRDetail);
+
+            pop.play();
+        }
+	}, false)
 }
 
 function animate() {
-    requestAnimationFrame(animate);
-    
-    time += 0.01;
-    h.scale(spin, h.remap(Math.sin(time), -1, 1, 0.75, 1));
+    requestAnimationFrame(animate); 
+
+    if (size > 0.5) size -= 0.0025;
+    h.scale(spin, size);
     h.rotate(spin, 0.1);
 
     controls.update();

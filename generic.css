@@ -49,7 +49,7 @@
     border-radius: 16px;
 }
 
-#ModEntry {
+.modEntry {
     background-color: #292929;
     border-radius: 5px;
     padding: 10px;
@@ -58,7 +58,7 @@
     align-items: center;
 }
 
-#ModEntry > div > p {
+.modEntry > div > p {
     font-size: 100%;
     color: #ffffff;
     margin: 10px 0px 10px 0px;
@@ -66,11 +66,11 @@
     text-decoration: none;
 }
 
-#ModEntry:hover {
+.modEntry:hover {
     background-color: #3a3a3a;
 }
 
-#ModEntry img {
+.modEntry img {
     width: 96px;
     height: 96px;
     min-width: 96px;
@@ -78,18 +78,17 @@
     padding: 0;
     margin-right: 15px;
 }
-
-#ModEntry a {
+.modEntry a {
     color: rgb(159, 192, 255);
 }
 
-#ModEntry > div > p:nth-child(1){
+.modEntry > div > p:nth-child(1){
     color: #ffffff;
     font-size: 200%;
     margin: 0;
 }
 
-#ModEntry > div > p:nth-child(2){
+.modEntry > div > p:nth-child(2){
     color: #ffffff;
     font-size: 140%;
 }

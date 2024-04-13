@@ -15,280 +15,97 @@
         <div id="Preloader">
             <p>Loading...</p>
         </div>
+
+        <audio id="Pop">
+            <source src="./resources/pop.mp3">Error: your web browser does not support this audio player</source>
+        </audio>
     </body>
 
     <body onload="document.getElementById('Preloader').style.visibility = 'hidden';" id="body" onClick="click()">    
-        <canvas id="bg"></canvas>
-        <script type="module" src="./scripts/visuals.js"></script>
-        <script type="text/javascript" src="./scripts/index.js"></script>
+        <div id="MainPage" onclick=''>
+            <canvas id="bg"></canvas>
+            <script type="module" src="./scripts/visuals.js"></script>
+            <script type="text/javascript" src="./scripts/index.js"></script>
 
-        <p style="position: absolute; bottom: 16px; left: 16px;">v1.2.0</p>
-
-        <div id="MainPage">
             <div id="TitleBar">
-                <p id="LinkHeader">Socials</p>
-                <p id="LinkHeader" style="font-size: 200%;">Pandas hell hole</p>
-                <p id="LinkHeader" style="visibility: hidden;">Projects</p>
+                <p class="linkHeader">Socials</p>
+                <p class="linkHeader" style="font-size: 200%;">Pandas hell hole</p>
+                <p class="linkHeader">Projects</p>
             </div>
 
             <div id="Links">
-                <div id="LinkElement" onclick='openTab("https://github.com/LeCloutPanda")'> 
+                <div class="linkElement" onclick='openPage("https://github.com/LeCloutPanda")'> 
                     <img src="resources/logos/github_logo.svg" height="32" width="32">
                     <p>Github</p>
                 </div>
 
-                <div id="LinkElement" onclick='openTab("https://modrinth.com/user/LeCloutPanda")'> 
+                <div class="linkElement" onclick='openPage("https://modrinth.com/user/LeCloutPanda")'> 
                     <img src="resources/logos/modrinth_logo.svg" height="32" width="32">
                     <p>Modrinth</p>
                 </div>
 
-                <div id="LinkElement" onclick='openTab("https://www.curseforge.com/members/lecloutpanda/projects")'> 
+                <div class="linkElement" onclick='openPage("https://www.curseforge.com/members/lecloutpanda/projects")'> 
                     <img src="resources/logos/curseforge_logo.svg" height="32" width="32">
                     <p>Curse Forge</p>
                 </div>
                 
-                <div id="LinkElement" onclick='openTab("https://www.instagram.com/lecloutpanda/")'> 
+                <div class="linkElement" onclick='openPage("https://www.instagram.com/lecloutpanda/")'> 
                     <img src="resources/logos/instagram_logo.svg" height="32" width="32">
                     <p>Art Instagram</p>
                 </div>
 
-                <div id="LinkElement" onclick='openTab("https://www.youtube.com/channel/UCDjft9tB5N_u2fQGm0I_pew")'> 
+                <div class="linkElement" onclick='openPage("https://www.youtube.com/channel/UCDjft9tB5N_u2fQGm0I_pew")'> 
                     <img src="resources/logos/youtube_logo.svg" height="32" width="32">                
                     <p>YouTube</p>
                 </div>
 
-                <div id="LinkElement" onclick='openTab("https://ko-fi.com/lecloutpanda")'> 
+                <div class="linkElement" onclick='openPage("https://ko-fi.com/lecloutpanda")'> 
                     <img src="resources/logos/kofi_logo.svg" height="32" width="32">                
                     <p>Ko-Fi</p>
                 </div>
 
-                <div id="LinkElement" onclick='openTab("https://www.amazon.com.au/hz/wishlist/ls/2SQCJB7J27F3C?ref_=wl_share")'> 
+                <div class="linkElement" onclick='openPage("https://www.amazon.com.au/hz/wishlist/ls/2SQCJB7J27F3C?ref_=wl_share")'> 
                     <img src="resources/logos/amazon_logo.svg" height="32" width="32">               
                     <p>My Death Wish</p>
                 </div>
-            </div>
 
-            <div id="Pages" style="visibility: hidden;">
-                <div id="PageElement" onclick='showModsList()'> 
-                    <p>Mods</p>
-                    <img src="resources/logos/gear.svg" height="32" width="32">
+                <div class="linkElement" onclick='openPage("https://www.paypal.com/paypalme/lecloutpanda")'> 
+                    <img src="resources/logos/paypal_logo.svg" height="32" width="32">               
+                    <p>Paypal</p>
                 </div>
             </div>
-        </div>
 
-        <div id="FullScreen" style="visibility: hidden;">
-            <img src="resources/logos/close.svg" onclick='hideModList()'>  
-
-            <div id="ModList">
-                <div>
-                    <div id="ModListTitle">
-                        <img src="resources/logos/resonite_logo.svg">
+            <div id="Pages">
+                <div class="pagesDropDown">
+                    <div class="pageElement" onclick='openPage("projects/resonite/index.html")'> 
                         <p>Resonite Mods</p>
+                        <img src="projects/resonite/resources/resonite_logo.svg" height="32" width="32">
                     </div>
                     
-                    <article id="ModEntry">
-                        <div>
-                            <p>Rebind</p>
-                            <p>Rebind unbinds secondary from joystick click and binds it to the XA buttons and moves the open dash button to holding the YB buttons on Oculos controllers.</p>
-                            <a href="https://github.com/LeCloutPanda/Rebind/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Default Laser State</p>
-                            <p>Allows the user to set the default active state of their laser upon joining/respawning.</p>
-                            <a href="https://github.com/LeCloutPanda/DeafultLaserState/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Resolutions</p>
-                            <p>Gives the ability to change the various aspects of the Finger photo feature.</p>
-                            <a href="https://github.com/LeCloutPanda/Resolutions/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Gif Importer</p>
-                            <p>Allows the user to import gifs natively into the game.</p>
-                            <a href="https://github.com/LeCloutPanda/GifImporter/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Context Menu Funnies</p>
-                            <p>Lets the end user modify their Context menu visually to make it unique/more accessible.</p>
-                            <a href="https://github.com/LeCloutPanda/ContextMenuFunnies/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Local Menu</p>
-                            <p>Allows the user to hide their Laser and Context menu locally so only they can see it.</p>
-                            <a href="https://github.com/LeCloutPanda/LocalMenu/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-                </div>
-               
-                <div>
-                    <div id="ModListTitle">
-                        <img src="resources/logos/minecraft.svg">
+                    <div class="pageElement" onclick='openPage("projects/minecraft/index.html")'> 
                         <p>Minecraft Mods</p>
+                        <img src="projects/minecraft/resources/minecraft_logo.png" height="32" width="32">
                     </div>
-                    
-                    <article id="ModEntry">
-                        <img src="resources/logos/concreteplus_logo.png">
-                        <div>
-                            <p>Concrete Plus</p>
-                            <p>Adds new blocks to the game based around Concrete block expanding building capabilities.</p>
-                            <a href="https://modrinth.com/mod/concrete-plus" target="_blank">Modrinth</a>
-                            <a href="https://www.curseforge.com/minecraft/mc-mods/concrete-plus" target="_blank">Curseforge (Fabric)</a>
-                            <a href="https://legacy.curseforge.com/minecraft/mc-mods/concrete-plus-forge" target="_blank">Curseforge (Forge)</a>    
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <img src="resources/logos/vegemitemod_logo.png">
-                        <div>
-                            <p>Vegemite Mod</p>
-                            <p>Add a slice of Australia to your game.</p>
-                            <a href="https://legacy.curseforge.com/minecraft/mc-mods/vegemite-mod" target="_blank">Curseforge (Fabric)</a>
-                        </div>
-                    </article>
-                </div>
                 
-                <div>
-                    <div id="ModListTitle">
-                        <img src="resources/logos/lethalcompany_logo.jpg">
+                    <div class="pageElement" onclick='openPage("projects/lethalcompany/index.html")'> 
                         <p>Lethal Company Mods</p>
+                        <img src="projects/lethalcompany/resources/lethalcompany_logo.jpg" height="32" width="32">
                     </div>
-                    
-                    <article id="ModEntry">
-                        <img src="resources/logos/lethaljojo_logo.png">
-                        <div>
-                            <p>Lethal Jojo</p>
-                            <p>Adds a slice of Jojo into your game.</p>
-                            <a href="https://thunderstore.io/c/lethal-company/p/PandasHellCrew/LethalJojo/" target="_blank">Thunderstore</a>
-                            <a href="https://github.com/LeCloutPanda/LethalJojo" target="_blank">Github</a>
-                        </div>
-                    </article>
-                </div>
 
-                <div>
-                    <div id="ModListTitle">
-                        <img src="resources/logos/vampiresurvivors_logo.png">
-                        <p>Vampire Surivors Mods</p>
-                    </div>
-                    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Debug Mode</p>
-                            <p>Adds a bunch of useful button hotkeys to debug/mess with.</p>
-                            <a href="https://github.com/LeCloutPanda/DebugMode/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Vampire RPC</p>
-                            <p>Adds Discord Rich presence to the game, display stats like what stage the player is on and how many kills/gold the player has gotten and more!.</p>
-                            <a href="https://github.com/LeCloutPanda/VampireRPC/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-
-                    <article id="ModEntry">
-                        <div>
-                            <p>Vampire Mod Menu</p>
-                            <p>Adds a custom menu to Vampire Survivors that let's users change their configs for my mods and other developers mods.</p>
-                            <a href="https://github.com/LeCloutPanda/VampireModMenu/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-                </div>
-
-                <div>
-                    <div id="ModListTitle">
-                        <img src="resources/logos/neosvr_logo.svg">
+                    <div class="pageElement" onclick='openPage("projects/neosvr/index.html")'> 
                         <p>NeosVR Mods</p>
+                        <img src="projects/neosvr/resources/neosvr_logo.svg" height="32" width="32">
                     </div>
-                    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Rebind</p>
-                            <p>Rebind unbinds secondary from joystick click and binds it to the XA buttons and moves the open dash button to holding the YB buttons on Oculos controllers.</p>
-                            <a href="https://github.com/LeCloutPanda/Rebind_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Default Laser State</p>
-                            <p>Allows the user to set the default active state of their laser upon joining/respawning.</p>
-                            <a href="https://github.com/LeCloutPanda/DefaultLaserState_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Resolutions</p>
-                            <p>Gives the ability to change the various aspects of the Finger photo feature.</p>
-                            <a href="https://github.com/LeCloutPanda/Resolutions_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Context Menu Funnies</p>
-                            <p>Lets the end user modify their Context menu visually to make it unique/more accessible.</p>
-                            <a href="https://github.com/LeCloutPanda/ContextMenuFunnies_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-    
-                    <article id="ModEntry">
-                        <div>
-                            <p>Local Menu</p>
-                            <p>Allows the user to hide their Laser and Context menu locally so only they can see it.</p>
-                            <a href="https://github.com/LeCloutPanda/LocalMenu_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
 
-                    <article id="ModEntry">
-                        <div>
-                            <p>Video To Stream</p>
-                            <p>Sets all Video Players spawned by the player to stream.</p>
-                            <a href="https://github.com/LeCloutPanda/VideoToStream_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-
-                    <article id="ModEntry">
-                        <div>
-                            <p>Audio Global in Local</p>
-                            <p>Changes how imported Audio Clips work.</p>
-                            <a href="https://github.com/LeCloutPanda/AudioGlobalInLocal_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-
-                    <article id="ModEntry">
-                        <div>
-                            <p>Customise</p>
-                            <p>Adds options to change default panel visuals for the Inspector, Logix Browser and Video Player.</p>
-                            <a href="https://github.com/LeCloutPanda/Customise_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
-
-                    <article id="ModEntry">
-                        <div>
-                            <p>Can I Join You</p>
-                            <p>Adds the ability to accept/deny join requests via a prompt.</p>
-                            <a href="https://github.com/LeCloutPanda/CanIJoinYou_Neos/releases/latest/" target="_blank">Latest Release</a>
-                        </div>
-                    </article>
+                    <div class="pageElement" onclick='openPage("projects/vampiresurvivors/index.html")'> 
+                        <p>Vampire Survivor Mods</p>
+                        <img src="projects/vampiresurvivors/resources/vampiresurvivors_logo.png" height="32" width="32">
+                    </div>
                 </div>
             </div>
+
+            <a style="position: absolute; bottom: 16px; left: 16px;" href="https://github.com/LeCloutPanda/LeCloutPanda.github.io/commits/main/" >v1.2.1-a</a>
+            <img style="position: absolute; bottom: 16px; right: 16px;" width="16" height="16" onclick='openPage("response/index.html")' src="resources/grid.png" ></img>
         </div>
     </body>  
 </html>
