@@ -4,6 +4,7 @@ function openTab(url) {
 }
 
 function openPage(url) {
+    document.getElementById("Preloader").style.visibility = "visible";
     var win = window.open(url, '_self');
     win.focus();
 }
