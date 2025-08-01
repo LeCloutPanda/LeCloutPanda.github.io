@@ -9,14 +9,11 @@ function openPage(url) {
     win.focus();
 }
 
-function hideModList() {
-    document.getElementById("FullScreen").style.display = "none";
+function toggleDropdown(id) {
+    const dropdown = document.getElementById(id).querySelector(".dropdownMenu");
+    dropdown.style.maxHeight = dropdown.style.maxHeight === "0px" ? "256px" : "0px";
 }
 
-function showModsList() {
-    document.getElementById("FullScreen").style.display = "block";
+function openPage(url) {
+    window.open(url, "_blank");
 }
-
-document.addEventListener("keydown", (e) => {
-    if (e.keyCode == 27) hideModList();
-});
