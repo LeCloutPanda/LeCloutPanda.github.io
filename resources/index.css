@@ -70,7 +70,6 @@ h1 {
     border-width: 2px;
     border-style: solid;
     border-color: #424242;
-    min-width: 256px;
 
     transition: 0.1s ease-in-out;
 }
